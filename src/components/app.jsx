@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import Hello from "./hello.jsx";
+import Gallery from "./gallery.jsx";
 
 export default function App() {
   return (
     <>
-      <h1>Hello from React !</h1>
+      <Gallery />
     </>
   );
 }
