@@ -54,9 +54,14 @@ export default function Gallery() {
         </div>
       ) : (
         <div id="gallery-container">
-          <p>Les photos iront là !</p>
+          {data.photos.map((photo) => (
+            <PhotoCard photo={photo} key={photo.id} />
+          ))}
         </div>
       )}
+      <footer className="gallery-footer">
+        <p>Propulsé by Unsplash</p>
+      </footer>
     </>
   );
 }
