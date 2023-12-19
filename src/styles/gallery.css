@@ -1,0 +1,52 @@
+.gallery-header {
+    text-align: center;
+    margin: 20px;
+  }
+
+  h1 {
+    text-align: left;
+  }
+
+ h1 input {
+    border: none;
+    margin: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #e59700;
+    width: min-content;
+  }
+  
+  #gallery-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+  }
+  
+
+.loading {
+    font-size: 18px;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .error {
+    color: #ff0000;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  #gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+  }
+  
+  .gallery-footer {
+    text-align: center;
+    margin: 20px;
+    color: #888; /* Couleur de texte grise */
+  }
+  

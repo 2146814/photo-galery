@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 const axios = require("axios");
 
 //Components
+import PhotoCard from "./photoCard.jsx";
 
 //Styles
 import "../styles/gallery.css";
@@ -15,7 +16,7 @@ export default function Gallery() {
 
   useEffect(() => {
     async function getPhotos(searchQuery) {
-      const unsplashApiKey = "VOTRE_CLE_D'ACCES_UNSLAPSH";
+      const unsplashApiKey = "VOTRE_CLE_D'ACCESS_UNSPLASH";
 
       try {
         const apiResponse = await axios.get(
@@ -45,7 +46,15 @@ export default function Gallery() {
 
   return (
     <>
-      <h1>Galerie de photos</h1>
+      <h1>
+        Galerie de{" "}
+        <input
+          type="text"
+          placeholder="..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </h1>
       {data === null ? (
         <div id="loading">Loading...</div>
       ) : data.errors ? (
