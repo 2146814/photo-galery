@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //Modules externes
 const axios = require("axios");
@@ -16,7 +17,7 @@ export default function Gallery() {
 
   useEffect(() => {
     async function getPhotos(searchQuery) {
-      const unsplashApiKey = "VOTRE_CLE_D'ACCESS_UNSPLASH";
+      const unsplashApiKey = "EbT3Qb1DWgF96rZ3G146_4oAHVDSYZ_cJ0hBWlPm4AI";
 
       try {
         const apiResponse = await axios.get(

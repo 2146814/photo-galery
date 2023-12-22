@@ -1,11 +1,22 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 //Styles
 import "../styles/photoCard.css";
 
 export default function PhotoCard({ photo }) {
+  const navigate = useNavigate();
+
+  function redirectToDetailPage() {
+    navigate(`/photo/${photo.id}`, { state: { photo: photo } });
+  };
+
+  function showPhotographerPage(){
+    window.mainBridge.openWithDefaultNavigator(`https://unsplash.com/@${photo.user.username}`);
+  }
+
   return (
-    <div className="photo-card">
+    <div className="photo-card" onClick={redirectToDetailPage}>
       <img
         className="img"
         src={photo.urls.regular}
@@ -16,8 +27,7 @@ export default function PhotoCard({ photo }) {
         <small className="credit">
           Par{" "}
           <a
-            target="_blank"
-            href={`https://unsplash.com/@${photo.user.username}`}
+            onClick={showPhotographerPage}
           >
             {photo.user.name}
           </a>

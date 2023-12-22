@@ -1,0 +1,65 @@
+/* À propos de Galerie Photo */
+#aboutContainer {
+  padding: 20px;
+}
+
+#aboutContainer h1 {
+    text-align: center;
+    color: #000; /* Couleur secondaire (noir) */
+    margin-bottom: 20px;
+  }
+  
+  #aboutContainer p {
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  #aboutContainer strong {
+    font-weight: bold;
+  }
+  
+  #aboutContainer a {
+    color: #ffd700; /* Couleur spéciale (dorée) */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  #aboutContainer a:hover {
+    color: #cdb008; /* Couleur secondaire (noir) */
+  }
+  
+  #aboutContainer ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  #aboutContainer li {
+    margin-bottom: 10px;
+  }
+  
+  #aboutContainer h2 {
+    color: #000; /* Couleur secondaire (noir) */
+    margin-top: 30px;
+  }
+  
+  /* Liens vers dépôt Git et API */
+  
+  #aboutContainer strong a {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  /* Problèmes rencontrés et Modifications CSS */
+  
+  #aboutContainer h2 + p {
+    margin-bottom: 30px;
+  }
+  
+  /* Images de captures CSS */
+  
+  #aboutContainer img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+  }
+  

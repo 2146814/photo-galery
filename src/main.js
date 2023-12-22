@@ -1,5 +1,7 @@
-const { app, BrowserWindow, protocol } = require("electron");
+const { app, BrowserWindow, protocol, ipcMain, shell, dialog } = require("electron");
+const fs = require("fs");
 const path = require("path");
+const axios = require("axios");
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require("electron-squirrel-startup")) {
@@ -28,6 +30,7 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    icon: path.join("./src/app_logo.ico"),
     webPreferences: {
       nodeIntegration: true,
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
@@ -65,3 +68,29 @@ app.on("activate", () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
+ipcMain.handle("downloadPhoto", async (_, url) => {
+  //Récupérer l'image
+  const image = await axios({
+    method: 'GET',
+    url: url,
+    responseType: 'arraybuffer',
+  });
+  //Trouver son extension
+  const extension = image.headers['content-type'].split('/')[1];
+
+  //Utilisateur choisi son emplacement
+  const { filePath } = await dialog.showSaveDialog({
+    buttonLabel: 'Sauvegarder',
+    defaultPath: path.join(app.getPath("downloads"), `image.${extension}`)
+  });
+
+  //Écrire le fichier
+  if (filePath) {
+    fs.writeFileSync(filePath, Buffer.from(image.data));
+  }
+  
+});
+
+ipcMain.handle("openWithDefaultNavigator", (_, url) => {
+  shell.openPath(url);
+});

@@ -12,7 +12,7 @@
     margin: 5px;
     font-size: 30px;
     font-weight: bold;
-    color: #e59700;
+    color: #FFD700;
     width: min-content;
   }
   
@@ -47,6 +47,6 @@
   .gallery-footer {
     text-align: center;
     margin: 20px;
-    color: #888; /* Couleur de texte grise */
+    color: #888;
   }
   

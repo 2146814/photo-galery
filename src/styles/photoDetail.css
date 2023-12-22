@@ -1,0 +1,75 @@
+#photoContainer {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #photo {
+    max-height: 600px;
+    border-radius: 8px;
+  }
+  
+  #likeContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  #likeContainer img {
+    max-width: 20px;
+    margin-right: 5px;
+  }
+  
+  #likeContainer small {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+  }
+
+  #photoContainer #credits {
+    color: #ffd700;
+    font-weight: bold;
+  }
+  
+  #photoContainer p {
+    font-size: 16px;
+    color: #444;
+    margin: 10px 0;
+  }
+  
+  #photoContainer .tag {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 6px;
+    background-color: #ffd700;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #photoContainer .tag:hover {
+    background-color: #cdb008;
+  }
+  
+  #photoContainer button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #photoContainer button:hover {
+    background-color: #2980b9;
+  }
+  

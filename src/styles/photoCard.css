@@ -8,6 +8,7 @@
     margin: 10px;
     width: 30%;
     height: min-content;
+    cursor: pointer;
   }
   
   .photo-card:hover {
